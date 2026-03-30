@@ -1,0 +1,317 @@
+:root {
+  color-scheme: dark;
+  --bg: #0e1116;
+  --panel: #161b22;
+  --panel-2: #1c2128;
+  --text: #e6edf3;
+  --muted: #9da7b3;
+  --border: #2d333b;
+  --link: #7cc7ff;
+  --accent: #8bffb0;
+  --danger: #ff8b8b;
+  --warning: #ffd580;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.45;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* ===== Header / Shell ===== */
+
+header {
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(14, 17, 22, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.1;
+}
+
+header p {
+  margin: 0;
+}
+
+main {
+  padding: 24px;
+}
+
+/* ===== Toolbar ===== */
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+input[type="search"],
+input[type="text"],
+select {
+  width: min(420px, 100%);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  outline: none;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--link);
+  box-shadow: 0 0 0 3px rgba(124, 199, 255, 0.15);
+}
+
+label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ===== Stats ===== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.stats > div {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* ===== Shared Cards / Grids ===== */
+
+.grid,
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card,
+.result-card,
+.empty-state {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.card h3,
+.result-card h3 {
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.card h3 a,
+.result-card h3 a {
+  color: var(--link);
+}
+
+.card p,
+.result-card p {
+  margin: 6px 0;
+}
+
+.meta,
+.tags,
+.badges,
+.links,
+.result-meta,
+.result-tags,
+.result-badges,
+.explorer-meta,
+.top-links,
+.palette-hint {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.result-desc {
+  color: var(--text);
+}
+
+/* ===== Explorer Layout ===== */
+
+.explorer-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.explorer-header {
+  margin-bottom: 20px;
+}
+
+.explorer-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.explorer-toolbar {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0 24px;
+}
+
+/* ===== Command Palette ===== */
+
+#palette {
+  display: none;
+  position: fixed;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 92vw);
+  max-height: 70vh;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  z-index: 9999;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+#palette-input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.palette-result {
+  padding: 10px 4px;
+  border-bottom: 1px solid #222b36;
+}
+
+.palette-result:last-child {
+  border-bottom: none;
+}
+
+.palette-result a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.palette-result a:hover {
+  text-decoration: underline;
+}
+
+.palette-result small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ===== Utility classes ===== */
+
+.top-links,
+.links {
+  margin-top: 10px;
+}
+
+.empty-state {
+  color: var(--muted);
+}
+
+strong {
+  color: var(--text);
+}
+
+/* ===== Status tint helpers if you add them later ===== */
+
+.status-active {
+  color: var(--accent);
+}
+
+.status-warning {
+  color: var(--warning);
+}
+
+.status-danger {
+  color: var(--danger);
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 900px) {
+  .explorer-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  header,
+  main {
+    padding: 18px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="search"],
+  input[type="text"],
+  select {
+    width: 100%;
+  }
+
+  #palette {
+    top: 8%;
+    width: 94vw;
+    padding: 16px;
+  }
+}

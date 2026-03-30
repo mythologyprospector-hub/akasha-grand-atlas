@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Grand Atlas Bookmark",
+  "type": "object",
+  "required": [
+    "name",
+    "url",
+    "category"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "free_tier": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "limited",
+        "no",
+        "n/a",
+        ""
+      ]
+    },
+    "catalog_or_supplier": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "n/a",
+        ""
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "active",
+        "redirected",
+        "temporarily_down",
+        "candidate_for_prune",
+        "archived",
+        "replaced",
+        ""
+      ]
+    },
+    "last_checked": {
+      "type": "string"
+    },
+    "replacement_url": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "akasha_status": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "approved",
+        "adapter_exists",
+        "in_use",
+        "archived",
+        ""
+      ]
+    }
+  }
+}

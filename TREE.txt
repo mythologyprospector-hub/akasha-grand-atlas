@@ -1,0 +1,48 @@
+Grand-Atlas-akasha-approved
+├── .github
+│   └── workflows
+│       ├── autofix-pr.yml
+│       ├── build.yml
+│       ├── deploy.yml
+│       ├── nightly-harvest.yml
+│       ├── nightly-rank-harvest.yml
+│       └── verify.yml
+├── data
+│   ├── bookmark.schema.json
+│   └── bookmarks.csv
+├── docs
+│   └── AKASHA_ALIGNMENT.md
+├── reports
+│   └── .gitkeep
+├── scripts
+│   ├── apply_auto_fixes.py
+│   ├── atlas_promote.py
+│   ├── atlas_promote_ranked.py
+│   ├── auto_promote_ranked.py
+│   ├── build_atlas.py
+│   ├── build_ranked_review_dashboard.py
+│   ├── build_review_dashboard.py
+│   ├── common.py
+│   ├── find_duplicates.py
+│   ├── harvest_candidates.py
+│   ├── harvest_v2.py
+│   ├── harvest_v3.py
+│   ├── import_approved_download.py
+│   ├── merge_csvs.py
+│   ├── preview_patch.py
+│   ├── promote_candidates.py
+│   ├── prune_candidates.py
+│   ├── rank_candidates.py
+│   ├── suggest_replacements.py
+│   └── verify_links.py
+├── site
+│   ├── app.js
+│   ├── explorer.html
+│   ├── explorer.js
+│   ├── palette.js
+│   └── styles.css
+├── .gitignore
+├── Makefile
+├── README.md
+├── repo-manifest.yaml
+└── requirements.txt

@@ -1,0 +1,49 @@
+repo:
+  name: grand-atlas
+  ecosystem: akasha-neighbor
+  version: 0.6.0
+  status: active
+
+identity:
+  role: registry
+  layer: external
+  description: >
+    Akasha-adjacent source discovery and registry engine for external tools,
+    APIs, datasets, archives, suppliers, and web resources.
+
+ownership:
+  steward: human
+  approval_required: true
+
+interfaces:
+  consumes:
+    - curated_lists
+    - github_search
+    - public_catalogs
+    - human_review
+  produces:
+    - ranked_source_candidates
+    - searchable_source_registry
+    - review_queues
+    - browser_bookmark_exports
+
+capabilities:
+  - source_discovery
+  - source_ranking
+  - candidate_review
+  - source_registry_generation
+  - bookmark_export
+
+alignment:
+  axioms_required: true
+  canonical_structure: true
+  interpretation_free_core: true
+
+relationships:
+  informs:
+    - akasha-apis
+    - akasha-time-nexus
+  not_core: true
+  neighboring_role: >
+    Grand Atlas scouts and catalogs external sources. It does not implement
+    live adapters and does not construct Akasha time-context bundles.

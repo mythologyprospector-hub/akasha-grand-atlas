@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas Explorer</title>
+<link rel="stylesheet" href="./styles.css">
+<style>
+body {
+  background: #0e1116;
+  color: #e6edf3;
+  font-family: system-ui, sans-serif;
+}
+
+.explorer-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 20px 48px;
+}
+
+.explorer-header {
+  margin-bottom: 20px;
+}
+
+.explorer-header h1 {
+  margin: 0 0 10px 0;
+}
+
+.explorer-header p {
+  margin: 0;
+  color: #9da7b3;
+}
+
+.explorer-toolbar {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0 24px;
+}
+
+.explorer-toolbar input,
+.explorer-toolbar select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  background: #161b22;
+  color: #e6edf3;
+}
+
+.explorer-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #9da7b3;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.result-card {
+  background: #161b22;
+  border: 1px solid #2d333b;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.result-card h3 {
+  margin: 0 0 8px 0;
+  line-height: 1.25;
+}
+
+.result-card h3 a {
+  color: #7cc7ff;
+  text-decoration: none;
+}
+
+.result-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.result-desc {
+  margin: 0 0 10px 0;
+  color: #e6edf3;
+}
+
+.result-meta,
+.result-tags,
+.result-badges {
+  color: #9da7b3;
+  font-size: 0.92rem;
+  margin: 6px 0 0 0;
+}
+
+.empty-state {
+  background: #161b22;
+  border: 1px solid #2d333b;
+  border-radius: 16px;
+  padding: 20px;
+  color: #9da7b3;
+}
+
+.top-links {
+  margin-top: 14px;
+  color: #9da7b3;
+}
+
+.top-links a {
+  color: #7cc7ff;
+}
+
+@media (max-width: 900px) {
+  .explorer-toolbar {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="explorer-wrap">
+    <div class="explorer-header">
+      <h1>Atlas Explorer</h1>
+      <p>Search your atlas instead of the wider web.</p>
+      <div class="top-links">
+        <a href="./index.html">Back to Atlas Home</a>
+        ·
+        <a href="../generated/bookmarks.html">Download Chrome bookmarks export</a>
+      </div>
+    </div>
+
+    <div class="explorer-toolbar">
+      <input id="search" type="search" placeholder="Search tools, categories, tags, descriptions...">
+      <select id="categoryFilter">
+        <option value="">All categories</option>
+      </select>
+      <select id="statusFilter">
+        <option value="">All statuses</option>
+        <option value="unknown">unknown</option>
+        <option value="active">active</option>
+        <option value="redirected">redirected</option>
+        <option value="temporarily_down">temporarily_down</option>
+        <option value="candidate_for_prune">candidate_for_prune</option>
+        <option value="archived">archived</option>
+      </select>
+      <select id="freeFilter">
+        <option value="">All link types</option>
+        <option value="free">Free-first only</option>
+        <option value="catalog">Catalog/supplier only</option>
+      </select>
+    </div>
+
+    <div class="explorer-meta">
+      <div>Total indexed: <strong id="totalCount">0</strong></div>
+      <div>Visible: <strong id="visibleCount">0</strong></div>
+      <div>Hint: press <strong>Ctrl + K</strong> on the homepage for the command palette</div>
+    </div>
+
+    <div id="results" class="result-grid"></div>
+  </div>
+
+  <script src="./explorer.js"></script>
+</body>
+</html>
