@@ -47,3 +47,10 @@ relationships:
   neighboring_role: >
     Grand Atlas scouts and catalogs external sources. It does not implement
     live adapters and does not construct Akasha time-context bundles.
+
+engine:
+  family: source
+  class: source_engine
+  role: unknown
+
+depends_on: []

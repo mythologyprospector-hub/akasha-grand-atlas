@@ -104,3 +104,39 @@ Grand Atlas is especially useful for scouting sources relevant to:
 
 This repo is ready to be pushed as an **Akasha-approved neighbor**.
 It should remain a registry and discovery engine, while `akasha-apis` and `akasha-time-nexus` take on adapter and context responsibilities.
+
+## Engine Role
+
+TODO: fill this section.
+
+## Why it exists
+
+TODO: fill this section.
+
+## Inputs
+
+TODO: fill this section.
+
+## Memory / Registry
+
+TODO: fill this section.
+
+## Relation Model
+
+TODO: fill this section.
+
+## Evaluator
+
+TODO: fill this section.
+
+## Outputs
+
+TODO: fill this section.
+
+## Position in Constellation
+
+TODO: fill this section.
+
+## Next Steps
+
+TODO: fill this section.
