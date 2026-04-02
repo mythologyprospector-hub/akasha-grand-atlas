@@ -1,15 +1,21 @@
 repo:
-  name: grand-atlas
-  ecosystem: akasha-neighbor
-  version: 0.6.0
+  name: akasha-grand-atlas
+  ecosystem: akasha
+  version: 0.1.0
   status: active
 
+engine:
+  family: source
+  class: source_engine
+  role: external_resource_mapping
+
 identity:
-  role: registry
-  layer: external
+  role: engine
+  layer: integration
   description: >
-    Akasha-adjacent source discovery and registry engine for external tools,
-    APIs, datasets, archives, suppliers, and web resources.
+    Source mapping engine for the Akasha constellation.
+    Responsible for identifying, naming, and organizing outside information sources,
+    providers, endpoints, and reference domains that Akasha may draw from.
 
 ownership:
   steward: human
@@ -17,40 +23,23 @@ ownership:
 
 interfaces:
   consumes:
-    - curated_lists
-    - github_search
-    - public_catalogs
-    - human_review
+    - source_lists
+    - provider_metadata
+    - external_reference_maps
   produces:
-    - ranked_source_candidates
-    - searchable_source_registry
-    - review_queues
-    - browser_bookmark_exports
+    - source_catalogs
+    - provider_maps
+    - external_resource_indexes
 
 capabilities:
-  - source_discovery
-  - source_ranking
-  - candidate_review
-  - source_registry_generation
-  - bookmark_export
+  - source_cataloging
+  - provider_mapping
+  - external_resource_indexing
+  - reference_structure_generation
 
 alignment:
   axioms_required: true
   canonical_structure: true
   interpretation_free_core: true
-
-relationships:
-  informs:
-    - akasha-apis
-    - akasha-time-nexus
-  not_core: true
-  neighboring_role: >
-    Grand Atlas scouts and catalogs external sources. It does not implement
-    live adapters and does not construct Akasha time-context bundles.
-
-engine:
-  family: source
-  class: source_engine
-  role: unknown
 
 depends_on: []
